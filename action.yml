@@ -1,5 +1,5 @@
-name: 'Install yq'
-description: 'Install yq CLI tool'
+name: 'Setup yq'
+description: 'Install yq to the current runner'
 author: 'Makepad Developers dev@makepad.fr'
 inputs:
   version:

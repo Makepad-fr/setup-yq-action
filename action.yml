@@ -26,5 +26,7 @@ runs:
         mkdir -p ~/.local/bin
         wget https://github.com/mikefarah/yq/releases/download/v${{ inputs.version }}/yq_linux_amd64 -O ~/.local/bin/yq
         chmod +x ~/.local/bin/yq
+      shell: bash
     - name: Add yq to PATH
       run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+      shell: bash

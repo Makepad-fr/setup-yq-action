@@ -1,6 +1,9 @@
 name: 'yq installer'
 description: 'Install yq to the current runner'
 author: 'Makepad Developers dev@makepad.fr'
+branding:
+  icon: 'package'
+  color: blue
 inputs:
   version:
     description: 'The version of yq to install'

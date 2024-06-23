@@ -1,4 +1,4 @@
-name: 'yq'
+name: 'yq installer'
 description: 'Install yq to the current runner'
 author: 'Makepad Developers dev@makepad.fr'
 inputs:

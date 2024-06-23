@@ -1,0 +1,27 @@
+name: 'Install yq'
+description: 'Install yq CLI tool'
+author: 'Makepad Developers dev@makepad.fr'
+inputs:
+  version:
+    description: 'The version of yq to install'
+    required: false
+    default: '4.6.0'
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache yq
+      id: cache-yq
+      uses: actions/cache@v3
+      with:
+        path: ~/.local/bin/yq
+        key: ${{ inputs.version }}
+        restore-keys: |
+          yq-
+    - name: Install yq
+      if: steps.cache-yq.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p ~/.local/bin
+        wget https://github.com/mikefarah/yq/releases/download/v${{ inputs.version }}/yq_linux_amd64 -O ~/.local/bin/yq
+        chmod +x ~/.local/bin/yq
+    - name: Add yq to PATH
+      run: echo "$HOME/.local/bin" >> $GITHUB_PATH
